@@ -4,6 +4,7 @@ import support.cse131.NotYetImplementedException;
 
 public class MultipleChoiceQuestion extends Question {
 
+	private static String hot;
 	/**
 	 * Constructor
 	 * @param prompt
@@ -11,11 +12,17 @@ public class MultipleChoiceQuestion extends Question {
 	 * @param points
 	 * @param choices
 	 */
+	private String prompt;
+	private String answer;
+	private int points;
+	private String [] choices;
+	
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
 		// Call the super class constructor, then create and set
 		// instance variables for any values that aren't handled
 		// by the base class
-		throw new NotYetImplementedException();
+			super(prompt, answer, points);
+			this.choices = choices;
 	}
 	
 	/**
@@ -23,7 +30,8 @@ public class MultipleChoiceQuestion extends Question {
 	 * the choices present for the question.
 	 */
 	public void displayPrompt() {
-		throw new NotYetImplementedException();
+		super.displayPrompt ();
+		
 	}
 	
 	/**
@@ -31,11 +39,16 @@ public class MultipleChoiceQuestion extends Question {
 	 * @return String[] of choices
 	 */
 	public String[] getChoices() {
-		throw new NotYetImplementedException();
+			return choices;
 	}
+	
 	
 	public static void main(String[] args) {
 		// TODO: create your own MultipleChoiceQuestion
+	String[] choices = { "oat", "whole" , "coconut" } ;
+	MultipleChoiceQuestion  webster = new MultipleChoiceQuestion("What milk do you use in coffee?","2", 1, String[] choices);
+	
+	
 	}
 
 }
